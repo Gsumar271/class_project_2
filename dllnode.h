@@ -66,10 +66,8 @@ namespace classProgram
     void listInsert(dllnode*& headPtrName, dllnode*& headPtrWeight,
                     const dllnode::valueTypeName& entryName,
                     const dllnode::valueTypeWeight& entryWeight);
-  //  void listInsertPrev(dllnode* previousPtr, const dllnode::valueTypeName& entryName,
-  //  const dllnode::valueTypeWeight& entryWeight);
-  //  void listInsertName(const dllnode::valueTypeName& entry);
-  //  void listInsertWeight(const dllnode::valueTypeWeight& entry);
+    void listInsertName(dllnode*& headPtrName, dllnode*& insertPtr);
+    void listInsertWeight(dllnode*& headPtrWeight, dllnode*& insertPtr);
     dllnode* listSearch(dllnode* headPtr, const dllnode::valueTypeName& target);
     const dllnode* listSearch
     (const dllnode* headPtr, const dllnode::valueTypeName& target);
@@ -79,6 +77,7 @@ namespace classProgram
     void listRemove(dllnode* previousPtr);
     void listClear(dllnode*& headPtr);
     void listCopy(const dllnode* sourcePtr, dllnode*& headPtr, dllnode*& tailPtr);
+
 
 }
 
