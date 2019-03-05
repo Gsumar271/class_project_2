@@ -42,20 +42,32 @@ namespace classProgram
     }
      
 
-    //method to insert a node
+//method to insert a node
     void listInsert(dllnode*& headPtrName, dllnode*& headPtrWeight,
       const dllnode::valueTypeName& entryName, const dllnode::valueTypeWeight& entryWeight)
     {
         //pointer to insert
         dllnode *insertPtr;
+
+        insertPtr = new dllnode(entryName, entryWeight, NULL, NULL);
+
+        //insert the name link
+        listInsertName(headPtrName, insertPtr);
+        
+        //insert the weight link
+        listInsertWeight(headPtrWeight, insertPtr);
+
+    }
+    
+    void listInsertName(dllnode*& headPtrName,
+                        dllnode*& insertPtr){
+
         //used to traverse a list
         dllnode *cursor;
         //used to keep a pointer to previous link
         dllnode *prevPtr;
         bool done = false;
-
-        insertPtr = new dllnode(entryName, entryWeight, NULL, NULL);
-
+        
         //insertName
         prevPtr = headPtrName;
         cursor = headPtrName;
@@ -78,14 +90,25 @@ namespace classProgram
             headPtrName = insertPtr;
         else
             prevPtr->setNameLink(insertPtr);
+    }
+    
+    
+    void listInsertWeight(dllnode*& headPtrWeight,
+                          dllnode*& insertPtr){
+        
+        //used to traverse a list
+        dllnode *cursor;
+        //used to keep a pointer to previous link
+        dllnode *prevPtr;
+        bool done = false;
         
         //insertWeight
         prevPtr = headPtrWeight;
         cursor = headPtrWeight;
         while (cursor != NULL && !done){
             if (insertPtr->getWeight() <= cursor->getWeight()){
-               //traverse the list until the weight is smaller
-               // than the next node's
+                //traverse the list until the weight is smaller
+                // than the next node's
                 done = true;
             }
             else{
@@ -101,7 +124,7 @@ namespace classProgram
             headPtrWeight = insertPtr;
         else
             prevPtr->setWeightLink(insertPtr);
-
+        
     }
 
     
