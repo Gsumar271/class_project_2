@@ -24,7 +24,6 @@ namespace classProgram
         typedef dllnode::valueTypeWeight valueTypeWeight;
         // CONSTRUCTORS and DESTRUCTOR
         DBLList();
-       // ~DBLList();
         void insertNode(const valueTypeName& entryName, const valueTypeWeight& entryWeight);
         void printList();
 
