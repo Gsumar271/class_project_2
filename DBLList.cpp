@@ -82,19 +82,18 @@ namespace classProgram
     {
         dllnode *cursor;
         
+        
         //Names
         cout << "Names & weights sorted(ascending) by name : ";
         for (cursor = headPtrName; cursor != NULL; cursor = cursor->getNameLink())
             cout << " " << cursor->getName() << " - " << cursor->getWeight() << ", ";
-        
-        cout << "Size of List: " << size() << endl;
-        cout << "Head ptr: " << headPtrWeight->getName() << endl;
-        
+       
+        cout << endl;
         //Weights
         cout << "Names & weights sorted(ascending) by weight : ";
         for (cursor = headPtrWeight; cursor != NULL; cursor = cursor->getWeightLink())
             cout << " " << cursor->getName() << " - " << cursor->getWeight() << ", ";
-        cout << endl;
+       
         
         
         
